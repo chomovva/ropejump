@@ -1,0 +1,47 @@
+.footer {
+
+	a {
+		color: #fff;
+	}
+
+	.custom-logo-link {
+		display: inline-block;
+		max-width: 3rem;
+		max-height: 3rem;
+		vertical-align: middle;
+	}
+
+	.copyright {
+		text-align: center;
+		@include min-width( $screen-sm ) {
+			text-align: left;
+		}
+	}
+
+	.socials {
+		display: flex;
+		justify-content: center;
+		margin: 0;
+		list-style-type: none;
+	}
+
+	.socials a {
+		@extend %background-icon;
+		display: block;
+		width: 2rem;
+		height: 2rem;
+		margin-left: .25rem;
+		margin-right: .25rem;
+	}
+
+	.socials .facebook { @extend %icon-facebook; }
+	.socials .instagram { @extend %icon-instagram; }
+
+	.developer {
+		text-align: center;
+		@include min-width( $screen-sm ) {
+			text-align: right;
+		}
+	}
+
+}

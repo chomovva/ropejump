@@ -1,0 +1,29 @@
+.section--order {
+
+	h2 {
+		text-align: left;
+	}
+
+	h2::before {
+		display: none;
+	}
+
+	h2 + p {
+		text-align: left;
+		margin-left: 0;
+		color: $titles-color;
+	}
+
+	&::before {
+		@extend %bgi;
+		content: '';
+		z-index: 0;
+		background-color: rgba( 255, 255, 255, .75 );
+	}
+
+	* {
+		position: relative;
+		z-index: 1;
+	}
+
+}

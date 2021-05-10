@@ -1,0 +1,120 @@
+.section--steps {
+
+	.counter {
+		position: relative;
+		margin-bottom: 1rem;
+		margin-left: -$flexboxgrid-outer-margin;
+		margin-right: -$flexboxgrid-outer-margin;
+	}
+
+	.counter::before,
+	.counter::after {
+		content: '';
+		height: .1rem;
+		background-color: lighten( $brand-success, 50% );
+		position: absolute;
+		top: 50%;
+		z-index: 0;
+		transform: translate( 0%, -50% );
+		display: none;
+		@include min-width( $screen-md ) {
+			display: block;
+		}
+	}
+
+	.counter::before {
+		left: 0;
+		right: 50%;
+	}
+
+	.counter::after {
+		left: 50%;
+		right: 0;
+	}
+
+	.item:nth-of-type( odd ) .counter::before {
+		visibility: hidden;
+		@include min-width( $screen-lg ) {
+			visibility: visible;
+		}
+	}
+
+	.item:nth-of-type( even ) .counter::after {
+		visibility: hidden;
+		@include min-width( $screen-lg ) {
+			visibility: visible;
+		}
+	}
+
+	.item:first-of-type .counter::before {
+		visibility: hidden;
+	}
+
+	.item:last-of-type .counter::after {
+		visibility: hidden;
+	}
+
+	.counter .value {
+		position: relative;
+		z-index: 1;
+  		border: .15rem solid $brand-primary;
+  		width: $line-height-computed;
+  		height: $line-height-computed;
+  		line-height: $line-height-computed;
+  		vertical-align: middle;
+  		border-radius: 50%;
+  		display: block;
+  		margin-left: 5rem;
+  		text-align: center;
+  		color: $brand-primary;
+  		background-color: $body-color;
+  		font-weight: bold;
+  		@include min-width( $screen-md ) {
+  			margin-left: auto;
+  			margin-right: auto;
+  		}
+	}
+
+	.counter .value::before {
+		@extend %small;
+		counter-increment: steps;
+  		content: counter( steps );
+	}
+
+	.item {
+		margin-bottom: 1rem;
+		@include min-width( $screen-lg ) {
+			margin-bottom: 0;
+		}
+	}
+
+	.item .title {
+		@extend %h4;
+		margin-bottom: 0;
+	}
+
+	.item .excerpt {
+		margin-top: 0;
+	}
+
+	.item .logo {
+		@extend %background-icon;
+		width: 10rem;
+		height: 10rem;
+		background-color: lighten( $brand-success, 50% );
+		border-radius: 50%;
+		overflow: hidden;
+		margin: 1rem auto;
+		background-size: 50%;
+		box-shadow: 0 0 2rem rgba( 0, 0, 0, .15 ) inset;
+	}
+
+	.item .title {
+		text-align: center;
+	}
+
+	.item .excerpt {
+		text-align: center;
+	}
+
+}

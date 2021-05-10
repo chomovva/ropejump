@@ -1,0 +1,13 @@
+.section--gallery {
+
+	.item {
+		border-radius: $border-radius;
+		overflow: hidden;
+		transition: all .2s;
+	}
+
+	.item:hover {
+		box-shadow: 0 0 1rem rgba( 0, 0, 0, .25 );
+	}
+
+}

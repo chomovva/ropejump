@@ -1,0 +1,28 @@
+//-
+	Набор миксинов
+
+
+mixin progress( percent )
+	.progress
+		.progress-bar( role="progressbar", style="width: " + percent, aria-valuenow=percent, aria-valuemin="0", aria-valuemax="100" )
+
+
+mixin widget( args )
+	.widget
+		h3.widget__title.title #{args.title}
+		p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis nisi asperiores eum dolorum eveniet beatae dolorem quo repudiandae commodi. Illum, enim molestiae, animi quae necessitatibus culpa consectetur aspernatur tenetur exercitationem?
+
+
+mixin blockquote( args )
+	.blockquote.row.middle-xs
+		.col-xs-3.col-sm-3
+			if args.foto == null || args.foto.length == 0
+				.author
+			else
+				figure.author
+					img.lazy( src="#" data-src=args.foto alt=args.name )
+					figcaption.hide #{args.name}
+		.col-xs-9.col-sm-9
+			blockquote
+				p #{args.quote}
+				cite #{args.name}

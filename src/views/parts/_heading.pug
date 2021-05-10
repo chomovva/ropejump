@@ -1,0 +1,7 @@
+h1 #{page.title}
+.row
+	.col-xs.col-sm.text-left
+		include ../parts/_breadcrumbs
+	if page.type == 'single'
+		.col-xs-4.col-sm-2.text-right
+			time.small( datetime="2001-05-15 19:00" ) 15 мая 2021

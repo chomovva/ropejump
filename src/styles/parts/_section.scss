@@ -1,0 +1,40 @@
+.section {
+	
+	@extend %bgi-cover;
+	padding: 2rem 0;
+	position: relative;
+
+	h2 {
+		margin-bottom: 2rem;
+		text-align: center;
+		text-transform: uppercase;
+		font-variant: small-caps;
+	}
+
+	h2::before {
+		@extend %icon-wave;
+		content: '';
+		height: .25rem;
+		width: 10rem;
+		display: block;
+		margin: 1rem auto;
+		background-repeat: repeat-x;
+		background-size: contain;
+	}
+
+	h2 + p {
+		font-style: italic;
+		margin: -1rem auto 2rem auto;
+		text-align: center;
+		max-width: 50rem;
+	}
+
+	&:nth-of-type( odd ) {
+		background-color: lighten( $brand-success, 60% );
+	}
+
+	&--steps {
+		counter-reset: steps;
+	}
+
+}

@@ -1,0 +1,35 @@
+%button {
+	display: inline-block;
+	text-decoration: none;
+	cursor: pointer;
+	border: .1rem solid;
+	padding: 0.5rem 2rem;
+	border-radius: $border-radius;
+	color: #fff;
+	text-transform: uppercase;
+	transition: background-color .5s;
+	letter-spacing: .1rem;
+}
+
+@each $name, $color in $brand-colors {
+	%button-#{$name} {
+		background-color: $color;
+		border-color: $color;
+	}
+}
+
+%button-small {
+	padding: 0 1rem;
+	font-size: 85%;
+	border: .15rem solid;
+	font-weight: bold;
+}
+
+%button-large {
+	padding: 1rem 3rem;
+}
+
+%button-block {
+	display: block;
+	width: 100%;
+}

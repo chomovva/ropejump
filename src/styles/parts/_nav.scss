@@ -1,0 +1,109 @@
+.nav {
+
+	position: fixed;
+	top: 0;	
+	left: 0;
+	right: 0;
+	bottom: 0;
+	pointer-events: none;
+	z-index: 9999;
+
+	.bg {
+		position: fixed;
+		top: 0;	
+		left: 0;
+		right: 0;
+		bottom: 0;
+		visibility: hidden;
+		opacity: 0;
+		background-color: transparent;
+		transition: opacity .2s;
+	}
+
+	.overlay {
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		z-index: 1;
+		background-color: $body-color;
+		padding: 4rem 2rem;
+		overflow-y: scroll;
+		transform: translate( 100%, 0% );
+		transition: transform .2s, opacity .2s;
+		opacity: .5;
+		width: 25rem;
+		max-width: 100%;
+	}
+
+	.close {
+		// @extend %background-icon;
+		// @extend %icon-close;
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin: 1rem;
+		width: 2rem;
+		height: 2rem;
+		cursor: pointer;
+		border: none;
+		padding: 0;
+		background-color: transparent;
+		display: block;
+	}
+
+	.close::after,
+	.close::before {
+		content: '';
+		display: block;
+		height: 1px;
+		position: absolute;
+		top: 50%;
+		left: 0%;
+		right: 0%;
+		background-color: #000;
+		transform-origin: center center;
+	}
+
+	.close::after {
+		transform: rotate( 45deg );
+	}
+
+	.close::before {
+		transform: rotate( -45deg );
+	}
+
+	.languages {
+		@extend %list-unstyled;
+		@extend %list-inline;
+		text-align: right;
+	}
+
+	.languages .current {
+		background-color: $brand-primary;
+		color: #fff;
+		padding: 0 1rem;
+		font-size: 85%;
+	}
+
+	.languages a {
+		padding: 0 1rem;
+		display: block;	
+	}
+
+	&.active {
+		pointer-events: auto;
+	}
+
+	&.active .bg {
+		visibility: visible;
+		opacity: 1;
+		background-color: rgba( 0, 0, 0, .75 );
+	}
+
+	&.active .overlay {
+		transform: translate( 0%, 0% );
+		opacity: 1;
+	}
+	
+}

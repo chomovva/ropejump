@@ -1,0 +1,28 @@
+.section--about {
+
+	.thumbnail {
+		display: block;
+		position: relative;
+		margin: 0 0 2rem 0;
+		position: relative;
+		@include min-width( $screen-lg ) {
+			top: -15%;
+			margin: 0;
+		}
+	}
+
+	.thumbnail img {
+		display: block;
+		border-radius: $border-radius;
+		box-shadow: 0 0 2.5rem rgba( 255, 255, 255, .25 );
+	}
+
+	.thumbnail::before {
+		@extend %bgi;
+		content: '';
+		background-color: #fff;
+		border-radius: $border-radius;
+		z-index: -1;
+	}
+
+}

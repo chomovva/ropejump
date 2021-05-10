@@ -1,0 +1,43 @@
+.header .panel {
+
+	a {
+		color: #fff;
+	}
+
+	.container {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+	}
+
+	.custom-logo-link {
+		order: -1;
+		max-width: 4rem;
+		max-height: 4rem;
+		margin-right: auto;
+	}
+
+	.custom-logo {
+		display: block;
+	}
+
+	.languages {
+		@extend %list-unstyled;
+		@extend %list-inline;
+		margin-left: 1rem;
+		margin-right: 1rem;
+	}
+
+	.call {
+		@extend %button;
+		margin-left: 1rem;
+		margin-right: 1rem;
+		border: 1px solid #fff;
+	}
+
+	.burger {
+		margin-left: 1rem;
+	}
+
+}

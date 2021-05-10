@@ -1,0 +1,21 @@
+.header {
+
+	.panel {
+		padding: .5rem 0;
+		position: relative;
+		z-index: 1;
+		color: #fff;
+	}
+
+	.jumbotron {
+		@extend %xy-center;
+		text-align: center;
+		color: #fff;
+		flex-grow: 1;
+		position: relative;
+		z-index: 1;
+		padding-top: 5rem;
+		padding-bottom: 10rem;
+	}
+
+}

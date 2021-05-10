@@ -1,0 +1,60 @@
+.header .jumbotron {
+
+	.counter {
+		padding: 2rem;
+		color: #fff;
+		background-color: $brand-warning;
+		box-shadow: $box-shadow;
+		text-align: center;
+		border-radius: $border-radius;
+	}
+
+	.counter .value--day {
+		font-size: 1.5rem;
+		line-height: 1.5rem;
+		@include min-width( $screen-sm ) {
+			font-size: 2.5rem;
+			line-height: 2.5rem;
+		}
+	}
+
+	.counter .value--date {
+		font-size: 2.5rem;
+		line-height: 2.5rem;
+		font-weight: bold;
+		@include min-width( $screen-sm ) {
+			font-size: 5rem;
+			line-height: 5rem;
+		}
+	}
+
+	.counter .value--month {
+		font-size: .85rem;
+		line-height: .85rem;
+		font-weight: bold;
+		@include min-width( $screen-sm ) {
+			font-size: 1rem;
+			line-height: 1rem;
+		}
+	}
+
+	.title {
+		text-shadow: 1px 1px 0 rgba( 0, 0, 0, .5 );
+		margin-bottom: 0;
+		color: #fff;
+	}
+
+	.description {
+		@extend %lead;
+		text-shadow: 1px 1px 0 rgba( 0, 0, 0, .5 );
+	}
+
+	.permalink {
+		@extend %button;
+		@extend %button-primary;
+		@extend %button-large;
+		margin-top: 2rem;
+		box-shadow: $box-shadow;
+	}
+
+}

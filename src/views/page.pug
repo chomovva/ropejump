@@ -1,0 +1,34 @@
+extend layout/_index
+
+
+block variables
+	- page.type = 'page';
+	- page.title = 'Контакты';
+
+
+block main
+	.container
+		include parts/_heading
+		.content
+			.row
+				.col-xs-12.col-sm-6
+					ul
+						li Адрес: Станиславского, 1б Мариуполь, Донецкая область, Украина
+						li Телефон: #[a( href="tel:380967943515" ) +38 (096) 794-35-15]
+						li Email: #[a( href="mailto:promsource@gmail.com" ) promsource@gmail.com]
+					.row
+						.col-xs-12.col-sm-4
+							figure.ml-0.mr-0
+								img( src="#" data-src=src.userfiles+"qr-code-facebook.png" alt="QR код страницы" )
+								figcaption #[a( href="https://www.facebook.com/ropejumpmariupol/" ) @ropejumpmariupol]
+						.col-xs-12.col-sm-4
+							figure.ml-0.mr-0
+								img( src="#" data-src=src.userfiles+"qr-code-instagram.png" alt="QR код страницы" )
+								figcaption #[a( href="https://www.instagram.com/ropejumpmrlp/" ) @ropejumpmrlp]
+						.col-xs-12.col-sm-4
+							figure.ml-0.mr-0
+								img( src="#" data-src=src.userfiles+"qr-code-phone.png" alt="QR код страницы" )
+								figcaption #[a( href="tel:380967943515" ) +38 (096) 794-35-15]
+				.col-xs-12.col-sm-6
+					include forms/_feedback
+			iframe( src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4631.031334083584!2d37.63611779031789!3d47.11893978639527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40e6e66070970ccf%3A0xba245a5a33ca6dca!2z0YPQuy4g0KHRgtCw0L3QuNGB0LvQsNCy0YHQutC-0LPQviwgMSwg0JzQsNGA0LjRg9C_0L7Qu9GMLCDQlNC-0L3QtdGG0LrQsNGPINC-0LHQu9Cw0YHRgtGMLCA4NzUwMA!5e1!3m2!1sru!2sua!4v1620472522334!5m2!1sru!2sua" style="border: 0; width: 100%; height: 25rem;" allowfullscreen="" loading="lazy" )

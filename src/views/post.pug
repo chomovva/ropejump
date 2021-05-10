@@ -1,0 +1,13 @@
+extend layout/_index
+
+
+block variables
+	- page.type = 'post singler';
+	- page.title = 'Пост';
+
+
+block main
+	.container
+		include parts/_heading
+		include parts/_content
+		include parts/_pager

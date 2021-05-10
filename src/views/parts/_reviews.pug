@@ -1,0 +1,20 @@
+//-
+	Главная страница
+	Отзывы
+
+
+mixin review
+	.col-xs-12.col-sm-9.col-md-6.mb-3
+		+blockquote( { name: 'Иванов Иван', quote: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' } )
+
+section.section.section--reviews#reviews
+	.container
+		h2 Отзывы
+		p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+		.row.center-xs
+			+review
+			+review
+			+review
+			+review
+		p.text-center.mt-3
+			a.btn.btn-success( href="#" ) Все отзывы

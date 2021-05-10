@@ -1,0 +1,17 @@
+extend layout/_index
+
+
+block variables
+	- page.type = 'front-page';
+	- page.title = 'Главная';
+
+
+
+block main
+	include parts/_about
+	include parts/_advantages
+	include parts/_order
+	include parts/_steps
+	include parts/_gallery
+	include parts/_reviews
+	include parts/_feedback

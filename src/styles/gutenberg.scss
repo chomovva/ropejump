@@ -1,0 +1,29 @@
+
+[data-type$='/clearfix'],
+.pstu-cleargix {
+  margin: 15px auto;
+  width: 100%;
+  text-align: center;
+  clear: both; }
+
+.pstu-clearfix-inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: center; }
+
+.pstu-clearfix-inner:before,
+.pstu-clearfix-inner:after {
+  content: '';
+  height: 3px;
+  flex-grow: 1;
+  background-image: repeating-linear-gradient(to right, #999 0px, #999 20px, transparent 20px, transparent 25px); }
+
+.pstu-clearfix-inner .label {
+  flex-shrink: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: monospace;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #555; }

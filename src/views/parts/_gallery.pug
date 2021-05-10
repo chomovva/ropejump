@@ -1,0 +1,26 @@
+//-
+	Главная страница
+	Галлерея
+
+
+mixin gallery_item( args )
+	a.fancybox.gallery__item.item( href=args.src data-fancybox="gallery" )
+		img( alt=args.title src=args.src )
+
+
+section.section.section--gallery#gallery
+	.container
+		h2 Gallery
+		p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+		.wrap#gallery-wrap
+			+gallery_item( { src: src.userfiles+'gallery01.jpg', title: '' } )
+			+gallery_item( { src: src.userfiles+'gallery02.jpg', title: '' } )
+			+gallery_item( { src: src.userfiles+'gallery03.jpg', title: '' } )
+			+gallery_item( { src: src.userfiles+'gallery04.jpg', title: '' } )
+			+gallery_item( { src: src.userfiles+'gallery05.jpg', title: '' } )
+			+gallery_item( { src: src.userfiles+'gallery06.jpg', title: '' } )
+			+gallery_item( { src: src.userfiles+'gallery07.jpg', title: '' } )
+			+gallery_item( { src: src.userfiles+'gallery08.jpg', title: '' } )
+			+gallery_item( { src: src.userfiles+'gallery09.jpg', title: '' } )
+			+gallery_item( { src: src.userfiles+'gallery10.jpg', title: '' } )
+			+gallery_item( { src: src.userfiles+'gallery11.jpg', title: '' } )

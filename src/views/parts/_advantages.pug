@@ -1,0 +1,25 @@
+//-
+	Главная страница
+	Принципы
+
+
+mixin advantages_item( args )
+	.advantages__item.item.col-xs-12.col-sm-12.col-md-4.col-lg-4
+		.row.stratch-xs
+			.col-xs-12.col-sm-6.col-md-12.col-lg-12.side.side--prev( data-src=args.bg )
+				.overlay
+					img.logo( src="#" data-src=args.logo alt=args.title )
+			.col-xs-12.col-sm-6.col-md-12.col-lg-12.side.side--text
+				.overlay
+					h3.title #{args.title}
+					p.excerpt #{args.excerpt}
+
+
+section.section.section--advantages#advantages 
+	.container
+		h2 Преимущества
+		p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.
+		.wrap: .row
+			+advantages_item( { bg: src.userfiles+'bg01.jpg', logo: src.userfiles+'checked.png', title: '6 років досвіду', excerpt: 'Клуб роупджампінгу працює з 2015 року' } )
+			+advantages_item( { bg: src.userfiles+'bg02.jpg', logo: src.userfiles+'checked.png', title: 'Обовязковий інструктаж', excerpt: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam proident' } )
+			+advantages_item( { bg: src.userfiles+'bg03.jpg', logo: src.userfiles+'checked.png', title: 'Подвійна страховка', excerpt: 'В усьому присутня подвійна страховка: дві підвісні системи, два троси, перевірку також проводять двоє фахівців' } )

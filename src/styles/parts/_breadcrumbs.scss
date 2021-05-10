@@ -1,0 +1,21 @@
+//	"Хлебные крошки"
+.breadcrumbs {
+
+	@extend %small;
+	margin: 1rem 0 2rem 0;
+
+	ul, ol {
+		list-style-type: none;	
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+	}
+
+	li + li:before {
+		content: '/';
+		margin: .5rem;
+	}
+
+}

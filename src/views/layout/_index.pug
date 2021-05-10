@@ -1,0 +1,27 @@
+include ../helpers/_variables
+include ../helpers/_mixing
+block variables
+	- page.type = 'page';
+doctype html
+html( lang="ru" )
+	include ../parts/_head
+	block head
+	block body
+		body( class=page.type )
+			block wrapper
+				nav.nav#nav
+					include ../parts/_nav
+				.wrapper#wrapper
+					header.wrapper__item.wrapper__item--header.lazy.header#header( data-src=src.userfiles+'firstscreen.jpg' )
+					header.wrapper__item.wrapper__item--header.header#header
+						block header
+							include ../parts/_panel
+							if page.type == 'front-page'
+								include ../parts/_jumbotron
+					main.wrapper__item.wrapper__item--main.main#main
+						block main
+					footer.wrapper__item.wrapper__item--footer.footer#footer
+						block footer
+							include ../parts/_footer
+					block enqueue
+						include ../parts/_enqueue

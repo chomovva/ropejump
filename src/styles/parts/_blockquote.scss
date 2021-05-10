@@ -1,0 +1,28 @@
+.blockquote {
+
+	.author {
+		@extend %icon-user;
+		@extend %background-icon;
+		margin: 2rem 0;
+		position: relative;
+		max-width: 20rem;
+		width: 100%;
+	}
+
+	.author::before {
+		content: '';
+		display: block;
+		width: 100%;
+		padding-top: 100%;
+	}
+
+	.author img {
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: auto;
+		top: 0;
+		border-radius: $border-radius;
+	}
+
+}
