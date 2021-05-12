@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 	<body <?php body_class(); ?> >
 
 		<?php
-			echo get_theme_mod( 'additionalscriptsbodystart' );
+			do_action( 'body_start' );
 			get_template_part( 'parts/nav' );
 		?>
 

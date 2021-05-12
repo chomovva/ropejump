@@ -14,14 +14,11 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 			<footer class="wrapper__item wrapper__item--footer footer" id="footer">
 				<div class="container">
 					<div class="row middle-xs">
-						<div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
-							<p class="copyright"><a href="#">2021 &copy; Альпсити</a></p>
+						<div class="col-xs-6 col-sm-4 first-sm col-md-4 col-lg-4">
+							<p class="copyright"><?php echo get_theme_mod( 'footersocialcopyright' ); ?></p>
 						</div>
-						<div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
-							<ul class="socials">
-								<li><a class="facebook" href="#"><span class="sr-only">Мы в Facebook</span></a></li>
-								<li><a class="instagram" href="#"><span class="sr-only">Мы в Instagram</span></a></li>
-							</ul>
+						<div class="col-xs-12 first-xs col-sm-4 col-md-4 col-lg-4">
+							<?php get_template_part( 'parts', 'socials', 'footer' ); ?>
 						</div>
 						<div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
 							<p class="developer"><?php _e( 'Разработка: <a href="https://chomovva.ru/">chomovva</a>', ROPEJUMP_TEXTDOMAIN ); ?></p>
@@ -32,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 		</div>
 		<?php
 			wp_footer();
-			echo get_theme_mod( 'additionalscriptsbodyend' );
+			do_action( 'body_end' );
 		?>
 	</body>
 </html>
