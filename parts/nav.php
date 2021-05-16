@@ -14,13 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 <nav class="nav" id="nav">
 	<div class="bg"></div>
 	<div class="overlay">
-		<button class="close"><span class="sr-only"><?php _e( 'Закрыть', ROPEJUMP_TEXTDOMAIN ); ?></span></button>
-		<ul class="languages">
-			<li><a href="#">Ru</a></li>
-			<li class="current">Uk</li>
-		</ul>
+		<button class="close"><span class="sr-only"><?php _e( 'Закрыть', ROPEJUMP_TEXTDOMAIN ); ?></span></button>	
 		<?php
-			do_action( 'nav_overlay_before' );
+			get_template_part( 'parts/languages' );
 			if ( has_nav_menu( 'main' ) ) {
 				wp_nav_menu( array(
 					'theme_location'  => 'main',
@@ -38,7 +34,6 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 			if ( is_active_sidebar( 'nav' ) ) {
 				get_sidebar();
 			}
-			do_action( 'nav_overlay_before' );
 		?>
 	</div>
 </nav>

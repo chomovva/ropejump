@@ -8,3 +8,15 @@
 @import "helpers/extends.button";
 @import "helpers/extends.icons";
 @import "helpers/extends";
+
+
+@import "base/normalize";
+// @import "base/wrapper";
+// @import "base/flexboxgrid";
+
+
+
+@import "parts/header";
+@import "parts/jumbotron";
+@import "parts/panel";
+@import "parts/burger";

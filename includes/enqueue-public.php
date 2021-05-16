@@ -28,7 +28,7 @@ function scripts() {
 		wp_add_inline_script( 'fancybox', file_get_contents( $init_gallery_script_path ), 'after' );
 	}
 	wp_add_inline_script( 'fancybox', "jQuery( '.fancybox' ).fancybox();", 'after' );
-	wp_add_inline_script( 'lazyload', "jQuery( '.lazy' ).lazy();", 'after' );
+	wp_add_inline_script( 'lazyload', "jQuery( '[data-src]' ).lazy();", 'after' );
 	wp_enqueue_script( 'superembed', get_theme_file_uri( "scripts/superembed{$suffix}.js" ), [ 'jquery' ], '3.1', true );
 }
 
@@ -68,7 +68,6 @@ function print_styles() {
 		wp_enqueue_style( 'justifiedGallery', get_theme_file_uri( "styles/justifiedGallery{$suffix}.css" ), [], '3.8.1', 'all' );
 	}
 	wp_enqueue_style( 'fancybox', get_theme_file_uri( "styles/fancybox{$suffix}.css" ), [], '3.3.5', 'all' );
-	wp_enqueue_style( 'slick', get_theme_file_uri( "styles/slick{$suffix}.css" ), [], '1.8.0', 'all' );
 	wp_enqueue_style( 'contact-form-7' );
 	wp_enqueue_style( 'wp-block-library' );
 	wp_enqueue_style( 'wpdiscuz-font-awesome' );

@@ -4,12 +4,12 @@
 .jumbotron
 	.container: .row.center-xs.bottom-xs
 		.col-xs-12.col-sm-8.col-md-9.col-lg-9.text-cetner
-			h1.title #{blog.name}
-			p.description #{blog.description}
-			a.permalink( href="#" ) Присоединиться!
-		.col-xs-6.col-sm-4.first-sm.col-md-3.col-lg-3
-			p.text-cetner.font-weight-bold.mt-3 Следующий прыжок:
-			.counter#counter
+			h1.title#jumbotron-title #{blog.name}
+			p.description#jumbotron-description #{blog.description}
+			a.permalink#jumbotron-permalink( href="#" ) Присоединиться!
+		.col-xs-8.col-sm-4.first-sm.col-md-3.col-lg-3
+			p.text-cetner.font-weight-bold.mt-3#jumbotron-counter-label Следующий прыжок:
+			.counter#jumbotron-counter
 				.value.value--day#day суббота
 				.value.value--date#date 05
 				.value.value--month#month мая

@@ -14,14 +14,14 @@ function customizer_register_footer( $wp_customize ) {
 		[
 			'title'            => __( 'Подвал сайта', ROPEJUMP_TEXTDOMAIN ),
 			'priority'         => 70,
-			'panel'            => ROPEJUMP_SLUG . '_parts',
+			'panel'            => 'template_parts',
 		]
 	); /**/
 
 	$wp_customize->add_setting(
 		'footersocialcopyright',
 		[
-			'transport'         => 'reset',
+			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_text_field',
 		]
 	);
@@ -29,10 +29,15 @@ function customizer_register_footer( $wp_customize ) {
 		'footersocialcopyright',
 		[
 			'section'           => ROPEJUMP_SLUG . '_footer',
-			'label'             => __( 'Копирайт' ),
+			'label'             => __( 'Копирайт', ROPEJUMP_TEXTDOMAIN ),
 			'type'              => 'url',
 		]
-	); /**/
+	);
+	$wp_customize->selective_refresh->add_partial( 'footersocialcopyright', [
+		'selector'         => '#footer-copyright',
+		'render_callback'  => function () { return customizer_get_text_theme_mod( 'footersocialcopyright' ); },
+		'fallback_refresh' => true,
+	] ); /**/
 
 	foreach ( apply_filters( 'social_networks', [] ) as $key => $label ) {
 		$wp_customize->add_setting(

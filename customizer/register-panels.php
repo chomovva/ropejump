@@ -13,7 +13,7 @@ function customizer_register_panels( $wp_customize ) {
 	 * Настройки блоков темы
 	 **/
 	$wp_customize->add_panel(
-		ROPEJUMP_SLUG . '_parts',
+		'template_parts',
 		[
 			'capability'      => 'edit_theme_options',
 			'title'           => __( 'Блоки темы', ROPEJUMP_TEXTDOMAIN ),
@@ -24,7 +24,7 @@ function customizer_register_panels( $wp_customize ) {
 	 * Настройки шаблонов страниц
 	 **/
 	$wp_customize->add_panel(
-		ROPEJUMP_SLUG . '_templates',
+		'page_templates',
 		[
 			'capability'      => 'edit_theme_options',
 			'title'           => __( 'Шаблоны страниц', ROPEJUMP_TEXTDOMAIN ),

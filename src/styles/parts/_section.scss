@@ -33,7 +33,11 @@
 		background-color: lighten( $brand-success, 60% );
 	}
 
-	&--steps {
+	&.section--order {
+		background-attachment: fixed;
+	}
+
+	&.section--steps {
 		counter-reset: steps;
 	}
 

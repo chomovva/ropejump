@@ -18,3 +18,16 @@ function theme_supports() {
 }
 
 add_action( 'after_setup_theme', 'ropejump\theme_supports' );
+
+
+/**
+ * Возвращает список социальных сетей для кнопок "поделиться"
+ * */
+function get_list_of_social_networks( $items = [] ) {
+	return array_merge( $items, [
+		'facebook'  => __( 'Facebook', ROPEJUMP_TEXTDOMAIN ),
+		'instagram' => __( 'instaram', ROPEJUMP_TEXTDOMAIN ),
+	] );
+}
+
+add_filter( 'social_networks', 'ropejump\get_list_of_social_networks', 10, 1 );

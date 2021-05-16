@@ -22,22 +22,19 @@
 		display: block;
 	}
 
-	.languages {
-		@extend %list-unstyled;
-		@extend %list-inline;
-		margin-left: 1rem;
-		margin-right: 1rem;
-	}
-
 	.call {
 		@extend %button;
-		margin-left: 1rem;
+		margin-left: auto;
 		margin-right: 1rem;
 		border: 1px solid #fff;
 	}
 
-	.burger {
+	.call + .burger {
 		margin-left: 1rem;
+	}
+
+	.burger {
+		margin-left: auto;
 	}
 
 }
