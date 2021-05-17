@@ -43,7 +43,7 @@ function customizer_register_footer( $wp_customize ) {
 		$wp_customize->add_setting(
 			'footersocial' . $key,
 			[
-				'transport'         => 'reset',
+				'transport'         => 'postMessage',
 				'sanitize_callback' => 'esc_url_raw',
 			]
 		);
@@ -55,6 +55,11 @@ function customizer_register_footer( $wp_customize ) {
 				'type'              => 'url',
 			]
 		); /**/
+		$wp_customize->selective_refresh->add_partial( 'footersocial' . $key, [
+			'selector'         => '#footer-socials',
+			'render_callback'  => '__return_false',
+			'fallback_refresh' => true,
+		] ); /**/
 	}
 
 }

@@ -73,7 +73,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 			wp_enqueue_style( 'wp-color-picker' );
 			wp_enqueue_style( 'code-editor' );
 			wp_enqueue_style( 'jquery-ui', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css', false, null );
-			wp_enqueue_style( 'wp-customize-control-list', get_theme_file_uri( 'sstyles/wp-customize-control-list.css' ), [ 'chosen', 'jquery-ui' ], filemtime( get_theme_file_path( 'styles/wp-customize-control-list.css' ) ), 'all' );
+			wp_enqueue_style( 'wp-customize-control-list', get_theme_file_uri( 'styles/wp-customize-control-list.css' ), [ 'chosen', 'jquery-ui' ], filemtime( get_theme_file_path( 'styles/wp-customize-control-list.css' ) ), 'all' );
 		}
 
 		public function render_content() {

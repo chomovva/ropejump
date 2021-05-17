@@ -21,7 +21,7 @@ function customizer_register_home_advantages( $wp_customize ) {
 	$wp_customize->add_setting(
 		'homeadvantagesusedby',
 		[
-			'transport'         => 'reset',
+			'transport'         => 'postMessage',
 			'sanitize_callback' => 'ropejump\sanitize_checkbox',
 		]
 	);
@@ -32,12 +32,16 @@ function customizer_register_home_advantages( $wp_customize ) {
 			'label'             => __( 'Использовать секцию', ROPEJUMP_TEXTDOMAIN ),
 			'type'              => 'checkbox',
 		]
-	); /**/
+	);
+	$wp_customize->selective_refresh->add_partial( 'homeadvantagesusedby', [
+		'render_callback'  => '__return_false',
+		'fallback_refresh' => true,
+	] ); /**/
 
 	$wp_customize->add_setting(
 		'homeadvantagestitle',
 		[
-			'transport'         => 'reset',
+			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_text_field',
 		]
 	);
@@ -48,7 +52,12 @@ function customizer_register_home_advantages( $wp_customize ) {
 			'label'             => __( 'Заголовок &lt;H2&gt;', ROPEJUMP_TEXTDOMAIN ),
 			'type'              => 'text',
 		]
-	); /**/
+	);
+	$wp_customize->selective_refresh->add_partial( 'homeadvantagestitle', [
+		'selector'         => '#advantages-title',
+		'render_callback'  => function () { return customizer_get_text_theme_mod( 'homeadvantagestitle' ); },
+		'fallback_refresh' => true,
+	] ); /**/
 
 	$wp_customize->add_setting(
 		'homeadvantagesdescription',
@@ -64,12 +73,17 @@ function customizer_register_home_advantages( $wp_customize ) {
 			'label'             => __( 'Подзаголовок &lt;P&gt;', ROPEJUMP_TEXTDOMAIN ),
 			'type'              => 'textarea',
 		]
-	); /**/
+	);
+	$wp_customize->selective_refresh->add_partial( 'homeadvantagesdescription', [
+		'selector'         => '#advantages-description',
+		'render_callback'  => function () { return customizer_get_text_theme_mod( 'homeadvantagesdescription' ); },
+		'fallback_refresh' => true,
+	] ); /**/
 
 	$wp_customize->add_setting(
 		'homeadvantages',
 		[
-			'transport'         => 'reset',
+			'transport'         => 'postMessage',
 			'sanitize_callback' => function ( $data ) {
 				$result = array_filter( array_map( function ( $value ) {
 					return parse_only_allowed_args(
@@ -106,7 +120,15 @@ function customizer_register_home_advantages( $wp_customize ) {
 				],
 			]
 		)
-	); /**/
+	);
+	$wp_customize->selective_refresh->add_partial( 'homeadvantages', [
+		'selector'         => '#advantages-wrap',
+		'render_callback'  => function () {
+			return customizer_render_parts_element_by_id( 'parts/home', 'advantages', [], 'advantages-wrap' );
+		},
+		'container_inclusive' => true,
+		'fallback_refresh' => true,
+	] ); /**/
 
 }
 

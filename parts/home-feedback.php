@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 
 
 $title = trim( get_theme_mod( 'homefeedbacktitle' ) );
-$excerpt = trim( get_theme_mod( 'homefeedbackexcerpt' ) );
+$description = trim( get_theme_mod( 'homefeedbackdescription' ) );
 $form = trim( do_shortcode( get_theme_mod( 'homefeedbackformshortcode' ), false ) );
 $bgi_src = get_theme_mod( 'homefeedbackbgisrc' );
 

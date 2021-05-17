@@ -7,7 +7,7 @@ namespace ropejump;
 if ( ! defined( 'ABSPATH' ) ) { exit; };
 
 
-$header_bgi_src = esc_attr( get_theme_mod( 'headerbgisrc' ) );
+$bgi_src = esc_attr( get_theme_mod( 'headerbgisrc' ) );
 
 
 ?>
@@ -30,7 +30,7 @@ $header_bgi_src = esc_attr( get_theme_mod( 'headerbgisrc' ) );
 			<header
 				class="wrapper__item wrapper__item--header header"
 				id="header"
-				<?php if ( ! empty( $header_bgi_src ) ) : echo  'data-src="' . $header_bgi_src . '"'; endif; ?>
+				<?php if ( ! empty( $bgi_src ) ) : echo  'data-src="' . $bgi_src . '"'; endif; ?>
 			>
 		
 				<?php

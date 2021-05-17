@@ -7,102 +7,102 @@ namespace ropejump;
 if ( ! defined( 'ABSPATH' ) ) { exit; };
 
 
-function customizer_register_home_feedback( $wp_customize ) {
+function customizer_register_home_order( $wp_customize ) {
 
 	$wp_customize->add_section(
-		ROPEJUMP_SLUG . '_home_feedback',
+		ROPEJUMP_SLUG . '_home_order',
 		[
-			'title'            => sprintf( '%s - %s', __( 'Главная страница', ROPEJUMP_TEXTDOMAIN ),  __( 'Обратная связь', ROPEJUMP_TEXTDOMAIN ) ),
+			'title'            => sprintf( '%s - %s', __( 'Главная страница', ROPEJUMP_TEXTDOMAIN ),  __( 'Форма "Заказать"', ROPEJUMP_TEXTDOMAIN ) ),
 			'priority'         => 70,
 			'panel'            => 'template_parts',
 		]
 	); /**/
 
 	$wp_customize->add_setting(
-		'homefeedbackusedby',
+		'homeorderusedby',
 		[
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'ropejump\sanitize_checkbox',
 		]
 	);
 	$wp_customize->add_control(
-		'homefeedbackusedby',
+		'homeorderusedby',
 		[
-			'section'           => ROPEJUMP_SLUG . '_home_feedback',
+			'section'           => ROPEJUMP_SLUG . '_home_order',
 			'label'             => __( 'Использовать секцию', ROPEJUMP_TEXTDOMAIN ),
 			'type'              => 'checkbox',
 		]
 	);
-	$wp_customize->selective_refresh->add_partial( 'homefeedbackusedby', [
+	$wp_customize->selective_refresh->add_partial( 'homeorderusedby', [
 		'render_callback'  => '__return_false',
 		'fallback_refresh' => true,
 	] ); /**/
 
 	$wp_customize->add_setting(
-		'homefeedbacktitle',
+		'homeordertitle',
 		[
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_text_field',
 		]
 	);
 	$wp_customize->add_control(
-		'homefeedbacktitle',
+		'homeordertitle',
 		[
-			'section'           => ROPEJUMP_SLUG . '_home_feedback',
+			'section'           => ROPEJUMP_SLUG . '_home_order',
 			'label'             => __( 'Заголовок &lt;H2&gt;', ROPEJUMP_TEXTDOMAIN ),
 			'type'              => 'text',
 		]
 	);
-	$wp_customize->selective_refresh->add_partial( 'homefeedbacktitle', [
-		'selector'         => '#feedback-title',
-		'render_callback'  => function () { return customizer_get_text_theme_mod( 'homefeedbacktitle' ); },
+	$wp_customize->selective_refresh->add_partial( 'homeordertitle', [
+		'selector'         => '#order-title',
+		'render_callback'  => function () { return customizer_get_text_theme_mod( 'homeordertitle' ); },
 		'fallback_refresh' => true,
 	] ); /**/
 
 	$wp_customize->add_setting(
-		'homefeedbackdescription',
+		'homeorderdescription',
 		[
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_textarea_field',
 		]
 	);
 	$wp_customize->add_control(
-		'homefeedbackdescription',
+		'homeorderdescription',
 		[
-			'section'           => ROPEJUMP_SLUG . '_home_feedback',
+			'section'           => ROPEJUMP_SLUG . '_home_order',
 			'label'             => __( 'Описание &lt;P&gt;', ROPEJUMP_TEXTDOMAIN ),
 			'type'              => 'textarea',
 		]
 	);
-	$wp_customize->selective_refresh->add_partial( 'homefeedbackdescription', [
-		'selector'         => '#feedback-description',
-		'render_callback'  => function () { return customizer_get_text_theme_mod( 'homefeedbackdescription' ); },
+	$wp_customize->selective_refresh->add_partial( 'homeorderdescription', [
+		'selector'         => '#order-description',
+		'render_callback'  => function () { return customizer_get_text_theme_mod( 'homeorderdescription' ); },
 		'fallback_refresh' => true,
 	] ); /**/
 
 	$wp_customize->add_setting(
-		'homefeedbackformshortcode',
+		'homeorderformshortcode',
 		[
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_text_field',
 		]
 	);
 	$wp_customize->add_control(
-		'homefeedbackformshortcode',
+		'homeorderformshortcode',
 		[
-			'section'           => ROPEJUMP_SLUG . '_home_feedback',
+			'section'           => ROPEJUMP_SLUG . '_home_order',
 			'label'             => __( 'Шорткод формы обратной связи', ROPEJUMP_TEXTDOMAIN ),
 			'type'              => 'text',
 		]
 	);
-	$wp_customize->selective_refresh->add_partial( 'homefeedbackformshortcode', [
-		'selector'         => '#feedback form',
+	$wp_customize->selective_refresh->add_partial( 'homeorderformshortcode', [
+		'selector'         => '#order form',
 		'render_callback'  => '__return_false',
 		'fallback_refresh' => true,
 	] ); /**/
 
 	$wp_customize->add_setting(
-		'homefeedbackbgisrc',
+		'homeorderbgisrc',
 		[
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'esc_url_raw',
@@ -111,20 +111,20 @@ function customizer_register_home_feedback( $wp_customize ) {
 	$wp_customize->add_control(
 		new \WP_Customize_Image_Control(
 			$wp_customize,
-			'homefeedbackbgisrc',
+			'homeorderbgisrc',
 			[
 				'label'         => __( 'Фоновое изображение', ROPEJUMP_TEXTDOMAIN ),
-				'section'       => ROPEJUMP_SLUG . '_home_feedback',
-				'settings'      => 'homefeedbackbgisrc',
+				'section'       => ROPEJUMP_SLUG . '_home_order',
+				'settings'      => 'homeorderbgisrc',
 			]
 		)
 	);
-	$wp_customize->selective_refresh->add_partial( 'homefeedbackbgisrc', [
-		'selector'         => '#feedback',
+	$wp_customize->selective_refresh->add_partial( 'homeorderbgisrc', [
+		'selector'         => '#order',
 		'render_callback'  => '__return_false',
 		'fallback_refresh' => true,
 	] ); /**/
 
 }
 
-add_action( 'customize_register', 'ropejump\customizer_register_home_feedback', 10, 1 );
+add_action( 'customize_register', 'ropejump\customizer_register_home_order', 10, 1 );

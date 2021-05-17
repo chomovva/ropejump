@@ -32,7 +32,9 @@ foreach ( apply_filters( 'social_networks', [] ) as $key => $label ) {
 							<p id="footer-copyright" class="copyright"><?php echo get_theme_mod( 'footersocialcopyright' ); ?></p>
 						</div>
 						<div class="col-xs-12 first-xs col-sm-4 col-md-4 col-lg-4">
-							<?php get_template_part( 'parts/socials', null, $socials ); ?>
+							<div id="footer-socials">
+								<?php get_template_part( 'parts/socials', null, $socials ); ?>
+							</div>
 						</div>
 						<div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
 							<p class="developer"><?php _e( 'Разработка: <a href="https://chomovva.ru/">chomovva</a>', ROPEJUMP_TEXTDOMAIN ); ?></p>

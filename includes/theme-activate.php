@@ -46,21 +46,28 @@ function setup_default_mods( $old_name ) {
 	 	'homeabouttitle'             => 'Роупджампинг',
 	 	'homeaboutdescription'       => 'Роупджампинг - достаточно молодое направление экстремального спорта и отдыха, суть которого заключается в прыжках с высотных объектов с использованием специального снаряжения. В Мариуполе такая возможность ощутить эйфорию свободного падения и получить дозу адреналина появилась в 2015 году. Основателем организации, которая организует роуп-прыжки является Андрей Шаталин, инструктор по йоге, который профессионально занимается промышленным альпинизмом. С помощью роупджампинг человек помогает людям преодолевать свои страхи.',
 	 	'homeaboutblockquoteusedby'  => false,
-	 	'homeaboutfotourl'           => '',
-	 	'homeaboutauthorfotourl'     => '',
+	 	'homeaboutthumbnailsrc'      => '',
+	 	'homeaboutauthorfotosrc'     => '',
 	 	'homeaboutauthorname'        => 'Андрей Шаталин',
 	 	'homeaboutblockquote'        => 'Роупджампингом занимаются люди разных профессий и возрастов, цели у них тоже разные. Самому молодому роупджамперу в нашей организации 6 лет, прыгали и экстремалы, которым за 60',
 
 	 	// преимущества
 	 	'homeadvantagesusedby'       => false,
-	 	'homeadvantagestitle'        => 'Роупджампинг',
+	 	'homeadvantagestitle'        => 'АльпСити',
 	 	'homeadvantagesdescription'  => '',
 	 	'homeadvantages'             => [],
+
+	 	// главная страница - Форма заказать
+	 	'homeorderusedby'            => false,
+	 	'homeordertitle'             => 'Запишиcь прямо сейчас!',
+	 	'homeorderdescription'       => '',
+	 	'homeorderformshortcode'     => '',
+	 	'homeorderbgisrc'            => '',
 
 	 	// главная страница - Обратная связь
 	 	'homefeedbackusedby'         => false,
 	 	'homefeedbacktitle'          => 'Напишите нам!',
-	 	'homefeedbackexcerpt'        => '',
+	 	'homefeedbackdescription'    => '',
 	 	'homefeedbackformshortcode'  => '',
 	 	'homefeedbackbgisrc'         => '',
 

@@ -26,11 +26,11 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 				</div>
 			</div>
 		</div>
-		<?php if ( has_post_thumbnail( get_the_ID() ) ) : ?>
+		<?php if ( has_post_thumbnail( get_the_ID() ) && ! empty( $post_thumbnail_url = get_the_post_thumbnail_url( get_the_ID(), ( wp_is_mobile() ) ? 'medium' : 'large' ) ) ) : ?>
 			<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 first-xs">
 				<figure class="ml-0 mr-0 mb-0">
 					<a href="<?php the_permalink( get_the_ID() ) ?>">
-						<img class="center-block" src="#" data-src="<?php echo get_the_post_thumbnail_url( get_the_ID(), ( wp_is_mobile() ) ? 'medium' : 'large' ); ?>" alt="<?php the_title_attribute( [ 'post_id' => get_the_ID() ] ) ?>"/>
+						<img class="center-block" src="#" data-src="<?php echo $post_thumbnail_url; ?>" alt="<?php the_title_attribute( [ 'post_id' => get_the_ID() ] ) ?>"/>
 					</a>
 				</figure>
 			</div>

@@ -120,10 +120,18 @@ function removing_image_size_from_url( $url = '' ) {
 
 
 /**
- * Возвращает и очищает настройку для использования в превью Customizer API
+ * Возвращает и очищает текстовую настройку для использования в превью Customizer API
  * */
 function customizer_get_text_theme_mod( $setting_name ) {
 	$result = nl2br( trim( esc_html( get_theme_mod( $setting_name ) ) ) );
+	return ( empty( $result ) ) ? false : $result;
+}
+
+/**
+ * Возвращает и очищает html настройку для использования в превью Customizer API
+ * */
+function customizer_get_editor_theme_mod( $setting_name ) {
+	$result = nl2br( trim( force_balance_tags( wp_kses_post( get_theme_mod( $setting_name ) ) ) ) );
 	return ( empty( $result ) ) ? false : $result;
 }
 
@@ -145,9 +153,7 @@ function customizer_render_parts_element_by_id( $slug, $name = null, $args = [],
 		$DOM = new \DOMDocument();
 		$DOM->loadHTML( '<?xml encoding="' . get_bloginfo( 'charset' ) . '" ?>' . $result );
 		$element = $DOM->getElementById( $element_id );
-		if ( $element ) {
-			$result = $DOM->saveHTML( $element );
-		}
+		$result = $element ? $DOM->saveHTML( $element ) : '';
 	}
 	return ( empty( $result ) ) ? false : $result;
 }

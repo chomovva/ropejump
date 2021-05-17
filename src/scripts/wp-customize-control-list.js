@@ -118,6 +118,7 @@
 		function FormToggle( event ) {
 			event.preventDefault();
 			if ( event.data.$modal.hasClass( 'hide' ) ) {
+				
 				var $item = jQuery( event.target ).closest( '.item' );
 				var data = GetData( event.data.id );
 				var index = $item.closest( 'ol' ).find( 'li' ).not( '.ui-sortable-placeholder' ).index( $item );
@@ -539,6 +540,7 @@
 			$modal.on( 'click', '.form .image button.choice', params, OpenMediaLibraryForSingleImage );
 			$modal.on( 'click', '.form .image img', params, OpenMediaLibraryForSingleImage );
 			$modal.on( 'click', '.form .image button.clear', params, ClearMediaForSingleImage );
+
 			$modal.on( 'change', '.form select[name]', params, SaveItem );
 			$modal.on( 'change', '.form [name][type=checkbox]', params, SaveItem );
 			$modal.on( 'change', '.form [name][type=radio]', params, SaveItem );
@@ -549,6 +551,7 @@
 			$modal.on( 'keyup', '.form [name][type=tel]', params, SaveItem );
 			$modal.on( 'keyup', '.form [name][type=password]', params, SaveItem );
 			$modal.on( 'keyup', '.form [name][type=email]', params, SaveItem );
+
 			$modal.on( 'keydown', '.form textarea', {}, AutoSizeTextareaHeight );
 			jQuery( document ).on( 'tinymce-editor-setup', WPEditorTriggerChange );
 			MediaLibraryForGallery.on( 'select', SelectImageForGallery );

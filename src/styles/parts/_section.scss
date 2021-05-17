@@ -33,6 +33,10 @@
 		background-color: lighten( $brand-success, 60% );
 	}
 
+	&.section--feedback {
+		background-attachment: fixed;
+	}
+
 	&.section--order {
 		background-attachment: fixed;
 	}

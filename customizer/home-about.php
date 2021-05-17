@@ -21,7 +21,7 @@ function customizer_register_home_about( $wp_customize ) {
 	$wp_customize->add_setting(
 		'homeaboutusedby',
 		[
-			'transport'         => 'reset',
+			'transport'         => 'postMessage',
 			'sanitize_callback' => 'ropejump\sanitize_checkbox',
 		]
 	);
@@ -32,12 +32,16 @@ function customizer_register_home_about( $wp_customize ) {
 			'label'             => __( 'Использовать секцию', ROPEJUMP_TEXTDOMAIN ),
 			'type'              => 'checkbox',
 		]
-	); /**/
+	);
+	$wp_customize->selective_refresh->add_partial( 'homeaboutusedby', [
+		'render_callback'  => '__return_false',
+		'fallback_refresh' => true,
+	] ); /**/
 
 	$wp_customize->add_setting(
 		'homeabouttitle',
 		[
-			'transport'         => 'reset',
+			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_text_field',
 		]
 	);
@@ -48,7 +52,12 @@ function customizer_register_home_about( $wp_customize ) {
 			'label'             => __( 'Заголовок &lt;H2&gt;', ROPEJUMP_TEXTDOMAIN ),
 			'type'              => 'text',
 		]
-	); /**/
+	);
+	$wp_customize->selective_refresh->add_partial( 'homeabouttitle', [
+		'selector'         => '#about-title',
+		'render_callback'  => function () { return customizer_get_text_theme_mod( 'homeabouttitle' ); },
+		'fallback_refresh' => true,
+	] ); /**/
 
 	$wp_customize->add_setting(
 		'homeaboutdescription',
@@ -67,12 +76,44 @@ function customizer_register_home_about( $wp_customize ) {
 				'settings'              => 'homeaboutdescription'
 			]
 		)
-	); /**/
+	);
+	$wp_customize->selective_refresh->add_partial( 'homeaboutdescription', [
+		'selector'         => '#about-description',
+		'render_callback'  => function () { return customizer_get_editor_theme_mod( 'homeaboutdescription' ); },
+		'fallback_refresh' => true,
+	] ); /**/
+
+	$wp_customize->add_setting(
+		'homeaboutthumbnailsrc',
+		[
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'esc_url_raw',
+		]
+	);
+	$wp_customize->add_control(
+		new \WP_Customize_Image_Control(
+			$wp_customize,
+			'homeaboutthumbnailsrc',
+			[
+				'label'         => __( 'Превью', ROPEJUMP_TEXTDOMAIN ),
+				'section'       => ROPEJUMP_SLUG . '_home_about',
+				'settings'      => 'homeaboutthumbnailsrc',
+			]
+		)
+	);
+	$wp_customize->selective_refresh->add_partial( 'homeaboutthumbnailsrc', [
+		'selector'         => '#about-thumbnail',
+		'render_callback'  => function () {
+			return customizer_render_parts_element_by_id( 'parts/home', 'about', [], 'about-thumbnail' );
+		},
+		'container_inclusive' => true,
+		'fallback_refresh' => true,
+	] ); /**/
 
 	$wp_customize->add_setting(
 		'homeaboutblockquoteusedby',
 		[
-			'transport'         => 'reset',
+			'transport'         => 'postMessage',
 			'sanitize_callback' => 'ropejump\sanitize_checkbox',
 		]
 	);
@@ -83,50 +124,51 @@ function customizer_register_home_about( $wp_customize ) {
 			'label'             => __( 'Показівать цитату', ROPEJUMP_TEXTDOMAIN ),
 			'type'              => 'checkbox',
 		]
-	); /**/
+	);
+	$wp_customize->selective_refresh->add_partial( 'homeaboutblockquoteusedby', [
+		'selector'         => '#about-blockquote',
+		'render_callback'  => function () {
+			return customizer_render_parts_element_by_id( 'parts/home', 'about', [], 'about-blockquote' );
+		},
+		'container_inclusive' => true,
+		'fallback_refresh' => true,
+	] ); /**/
 
 	$wp_customize->add_setting(
-		'homeaboutfotourl',
+		'homeaboutauthorfotosrc',
 		[
-			'transport'         => 'reset',
-			'sanitize_callback' => 'esc_url_raw',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'absint',
 		]
 	);
 	$wp_customize->add_control(
-		new \WP_Customize_Image_Control(
+		new \WP_Customize_Cropped_Image_Control(
 			$wp_customize,
-			'homeaboutfotourl',
-			[
-				'label'         => __( 'Пресью', ROPEJUMP_TEXTDOMAIN ),
-				'section'       => ROPEJUMP_SLUG . '_home_about',
-				'settings'      => 'homeaboutfotourl',
-			]
-		)
-	);
-
-	$wp_customize->add_setting(
-		'homeaboutauthorfotourl',
-		[
-			'transport'         => 'reset',
-			'sanitize_callback' => 'esc_url_raw',
-		]
-	);
-	$wp_customize->add_control(
-		new \WP_Customize_Image_Control(
-			$wp_customize,
-			'homeaboutauthorfotourl',
+			'homeaboutauthorfotosrc',
 			[
 				'label'         => __( 'Фото автора цитаты', ROPEJUMP_TEXTDOMAIN ),
 				'section'       => ROPEJUMP_SLUG . '_home_about',
-				'settings'      => 'homeaboutauthorfoto',
+				'settings'      => 'homeaboutauthorfotosrc',
+				'flex_width'    => false, 
+				'flex_height'   => false,
+				'width'         => 300,
+				'height'        => 300,
 			]
 		)
 	);
+	$wp_customize->selective_refresh->add_partial( 'homeaboutauthorfotosrc', [
+		'selector'         => '#about-blockquote',
+		'render_callback'  => function () {
+			return customizer_render_parts_element_by_id( 'parts/home', 'about', [], 'about-blockquote' );
+		},
+		'container_inclusive' => true,
+		'fallback_refresh' => true,
+	] ); /**/
 
 	$wp_customize->add_setting(
 		'homeaboutauthorname',
 		[
-			'transport'         => 'reset',
+			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_text_field',
 		]
 	);
@@ -137,12 +179,20 @@ function customizer_register_home_about( $wp_customize ) {
 			'label'             => __( 'Имя автора цитаты', ROPEJUMP_TEXTDOMAIN ),
 			'type'              => 'text',
 		]
-	); /**/
+	);
+	$wp_customize->selective_refresh->add_partial( 'homeaboutauthorname', [
+		'selector'         => '#about-blockquote',
+		'render_callback'  => function () {
+			return customizer_render_parts_element_by_id( 'parts/home', 'about', [], 'about-blockquote' );
+		},
+		'container_inclusive' => true,
+		'fallback_refresh' => true,
+	] ); /**/
 
 	$wp_customize->add_setting(
 		'homeaboutblockquote',
 		[
-			'transport'         => 'reset',
+			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_textarea_field',
 		]
 	);
@@ -153,7 +203,15 @@ function customizer_register_home_about( $wp_customize ) {
 			'label'             => __( 'Цитата', ROPEJUMP_TEXTDOMAIN ),
 			'type'              => 'textarea',
 		]
-	); /**/
+	);
+	$wp_customize->selective_refresh->add_partial( 'homeaboutblockquote', [
+		'selector'         => '#about-blockquote',
+		'render_callback'  => function () {
+			return customizer_render_parts_element_by_id( 'parts/home', 'about', [], 'about-blockquote' );
+		},
+		'container_inclusive' => true,
+		'fallback_refresh' => true,
+	] ); /**/
 
 }
 
