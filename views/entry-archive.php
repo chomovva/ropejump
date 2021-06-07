@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 				<?php the_excerpt(); ?>
 				<div class="row middle-xs">
 					<div class="col-xs-6 text-left">
-						<time class="small" datetime="<?php the_time( 'c' ); ?>"><?php the_time( 'j F Y' ); ?>
+						<time class="small" datetime="<?php the_time( 'c' ); ?>"><?php the_time( get_option( 'date_format', 'j F Y' ) ); ?>
 					</div>
 					<div class="col-xs-6 text-right">
 						<a class="btn btn-default" href="<?php the_permalink( get_the_ID() ); ?>"><?php _e( 'Подрбнее', ROPEJUMP_TEXTDOMAIN ); ?></a>

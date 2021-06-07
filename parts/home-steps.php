@@ -7,48 +7,22 @@ namespace ropejump;
 if ( ! defined( 'ABSPATH' ) ) { exit; };
 
 
-?>
+$title = trim( get_theme_mod( 'homestepstitle' ) );
+$description = trim( get_theme_mod( 'homestepsdescription' ) );
+$entries = get_theme_mod( 'homesteps' );
 
 
-<section class="section section--steps" id="steps" role="list">
-	<div class="container">
-		<h2>HOW WE WORK</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-		<div class="wrap">
-			<div class="row center-xs">
-								<div class="steps__item item col-xs-12 col-sm-5 col-md-3 col-lg-3" role="listitem">
-									<div class="counter">
-										<div class="value"></div>
-									</div>
-									<div class="logo" data-src="./userfiles/step01.png"></div>
-									<h3 class="title">Lorem ipsum dolor sit</h3>
-									<p class="excerpt"> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-								</div>
-								<div class="steps__item item col-xs-12 col-sm-5 col-md-3 col-lg-3" role="listitem">
-									<div class="counter">
-										<div class="value"></div>
-									</div>
-									<div class="logo" data-src="./userfiles/step01.png"></div>
-									<h3 class="title">Lorem ipsum dolor sit</h3>
-									<p class="excerpt"> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-								</div>
-								<div class="steps__item item col-xs-12 col-sm-5 col-md-3 col-lg-3" role="listitem">
-									<div class="counter">
-										<div class="value"></div>
-									</div>
-									<div class="logo" data-src="./userfiles/step01.png"></div>
-									<h3 class="title">Lorem ipsum dolor sit</h3>
-									<p class="excerpt"> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-								</div>
-								<div class="steps__item item col-xs-12 col-sm-5 col-md-3 col-lg-3" role="listitem">
-									<div class="counter">
-										<div class="value"></div>
-									</div>
-									<div class="logo" data-src="./userfiles/step01.png"></div>
-									<h3 class="title">Lorem ipsum dolor sit</h3>
-									<p class="excerpt"> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-								</div>
-			</div>
-		</div>
-	</div>
-</section>
+if ( is_string( $entries ) ) {
+	$entries = json_decode( $entries, true );
+}
+
+if ( is_array( $entries ) && ! empty( $entries ) ) {
+	ob_start();
+	foreach ( $entries as $entry ) {
+		include get_theme_file_path( 'views/entry-step.php' );
+	}
+	$content = ob_get_contents();
+	ob_end_clean();
+}
+
+include get_theme_file_path( 'views/home-steps.php' );

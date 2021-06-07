@@ -1,0 +1,26 @@
+// стили шаблона страницы поиска
+.search {
+
+	counter-reset: entries;
+
+	.entry {
+		counter-increment: entries;
+	}
+
+	.entry .counter {
+		@extend %xy-center;
+		width: 3rem;
+		height: 3rem;
+		background-color: $brand-success;
+	}
+
+	.entry .counter::after {
+		content: counter( entries );
+		color: #fff;
+	}
+
+	.entry .title {
+		@extend %h3;
+	}
+
+}

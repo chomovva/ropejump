@@ -1,0 +1,17 @@
+@import "helpers/variables";
+@import "helpers/functions";
+@import "helpers/flex";
+@import "helpers/mixins";
+@import "helpers/extends.titles";
+@import "helpers/extends.button";
+@import "helpers/extends.icons";
+@import "helpers/extends";
+
+
+.customize-control-separator {
+	margin-top: 2em;
+}
+
+.customize-control-separator .customize-control-title {
+	@extend %lead;
+}

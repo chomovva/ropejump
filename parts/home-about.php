@@ -21,6 +21,9 @@ $thumbnail_alt = '';
 
 if ( is_url( $thumbnail_src ) ) {
 	$thumbnail_id = attachment_url_to_postid( removing_image_size_from_url( $thumbnail_src ) );
+	if ( absint( $thumbnail_id ) ) {
+		$thumbnail_src = wp_get_attachment_image_url( $thumbnail_id, 'large', false );
+	}
 	$thumbnail_alt = get_post_meta( $thumbnail_id, '_wp_attachment_image_alt', true );
 }
 

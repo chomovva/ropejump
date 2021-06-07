@@ -15,5 +15,5 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 <?php endif; ?>
 
 <?php if ( isset( $description ) && ! empty( $description ) ) : ?>
-	<h1><?php echo $description; ?></h1>
+	<p><?php echo $description; ?></p>
 <?php endif; ?>

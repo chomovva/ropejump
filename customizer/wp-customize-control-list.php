@@ -41,10 +41,10 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 				],
 			], $args[ 'controls' ] );
 			$this->input_attrs = array_merge( $this->input_attrs, [
-				'type'   => 'hidden',
+				'type'   => ( SCRIPT_DEBUG ) ? 'text' : 'hidden',
 				'id'     => $this->id,
 				'name'   => $this->id,
-				'value'  => htmlspecialchars( wp_json_encode( ( is_serialized( $this->value() ) ) ? unserialize( $this->value() ) : $this->value() ), ENT_QUOTES, 'UTF-8' ),
+				'value'  => htmlspecialchars( is_array( $this->value() ) ? wp_json_encode( $this->value() ) : $this->value(), ENT_QUOTES, 'UTF-8' ),
 				'placeholder' => '',
 			] );
 		}

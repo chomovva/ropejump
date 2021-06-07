@@ -20,9 +20,7 @@ function scripts() {
 	$suffix = ( SCRIPT_DEBUG ) ? '.min' : '';
 	wp_enqueue_script( 'ropejump-public', get_theme_file_uri( "scripts/public{$suffix}.js" ), [ 'jquery', 'fancybox' ], filemtime( get_theme_file_path( "scripts/public{$suffix}.js" ) ), true );
 	wp_enqueue_script( 'lazyload', get_theme_file_uri( "scripts/lazyload{$suffix}.js" ), [ 'jquery' ], '1.7.6', true );
-	if ( is_home() ) {
-		wp_enqueue_script( 'justifiedGallery', get_theme_file_uri( "scripts/jquery.justifiedGallery{$suffix}.js" ), [ 'jquery' ], '3.8.1', true );
-	}
+	wp_register_script( 'justifiedGallery', get_theme_file_uri( "scripts/jquery.justifiedGallery{$suffix}.js" ), [ 'jquery' ], '3.8.1', true );
 	wp_enqueue_script( 'fancybox', get_theme_file_uri( "scripts/fancybox{$suffix}.js" ), [ 'jquery' ], '3.3.5', true );
 	if ( file_exists( $init_gallery_script_path = get_theme_file_path( 'scripts/init/fancybox-gallery.js' ) ) ) {
 		wp_add_inline_script( 'fancybox', file_get_contents( $init_gallery_script_path ), 'after' );
@@ -33,6 +31,42 @@ function scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'ropejump\scripts' );
+
+
+/**
+ * Добавляет предварительную загрузку шрифтов
+ * */
+function add_preload_resource() {
+	foreach ( apply_filters( 'preload_resource_part', [
+		'fonts/Montserrat-italic-bold-cyrillic-ext.woff2',
+		'fonts/Montserrat-italic-bold-cyrillic.woff2',
+		'fonts/Montserrat-italic-bold-latin-ext.woff2',
+		'fonts/Montserrat-italic-bold-latin.woff2',
+		'fonts/Montserrat-italic-bold-vietnamese.woff2',
+		'fonts/Montserrat-italic-cyrillic.woff2',
+		'fonts/Montserrat-italic-cyrillic-ext.woff2',
+		'fonts/Montserrat-italic-latin.woff2',
+		'fonts/Montserrat-italic-latin-ext.woff2',
+		'fonts/Montserrat-italic-vietnamese.woff2',
+		'fonts/Montserrat-normal-bold-cyrillic.woff2',
+		'fonts/Montserrat-normal-bold-cyrillic-ext.woff2',
+		'fonts/Montserrat-normal-bold-latin.woff2',
+		'fonts/Montserrat-normal-bold-latin-ext.woff2',
+		'fonts/Montserrat-normal-bold-vietnamese.woff2',
+		'fonts/Montserrat-normal-cyrillic.woff2',
+		'fonts/Montserrat-normal-cyrillic-ext.woff2',
+		'fonts/Montserrat-normal-latin.woff2',
+		'fonts/Montserrat-normal-latin-ext.woff2',
+		'fonts/Montserrat-normal-vietnamese.woff2',
+	] ) as $file_path ) {
+		$file_uri = get_theme_file_uri( $file_path );
+		if ( $file_uri ) {
+			echo '<link rel="preload" href="' . $file_uri . '" as="font" crossorigin="anonymous">';
+		}
+	}
+}
+
+add_action( 'head_start', 'ropejump\add_preload_resource' );
 
 
 /**
@@ -64,9 +98,7 @@ function print_styles() {
 	$suffix = ( SCRIPT_DEBUG ) ? '.min' : '';
 	wp_enqueue_style( 'ropejump-fonts', get_theme_file_uri( "styles/fonts{$suffix}.css" ), [], filemtime( get_theme_file_path( "styles/fonts{$suffix}.css" ) ), 'all' );
 	wp_enqueue_style( 'ropejump-public', get_theme_file_uri( "styles/public{$suffix}.css" ), [], filemtime( get_theme_file_path( "styles/public{$suffix}.css" ) ), 'all' );
-	if ( is_home() ) {
-		wp_enqueue_style( 'justifiedGallery', get_theme_file_uri( "styles/justifiedGallery{$suffix}.css" ), [], '3.8.1', 'all' );
-	}
+	wp_register_style( 'justifiedGallery', get_theme_file_uri( "styles/justifiedGallery{$suffix}.css" ), [], '3.8.1', 'all' );
 	wp_enqueue_style( 'fancybox', get_theme_file_uri( "styles/fancybox{$suffix}.css" ), [], '3.3.5', 'all' );
 	wp_enqueue_style( 'contact-form-7' );
 	wp_enqueue_style( 'wp-block-library' );

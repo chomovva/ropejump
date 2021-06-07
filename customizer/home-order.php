@@ -13,7 +13,7 @@ function customizer_register_home_order( $wp_customize ) {
 		ROPEJUMP_SLUG . '_home_order',
 		[
 			'title'            => sprintf( '%s - %s', __( 'Главная страница', ROPEJUMP_TEXTDOMAIN ),  __( 'Форма "Заказать"', ROPEJUMP_TEXTDOMAIN ) ),
-			'priority'         => 70,
+			'priority'         => 50,
 			'panel'            => 'template_parts',
 		]
 	); /**/

@@ -7,21 +7,16 @@ namespace ropejump;
 if ( ! defined( 'ABSPATH' ) ) { exit; };
 
 
-// add
-
-// add_action( 'entry_before', 'comments_template', 10, 0 );
 
 /**
  * Добавляет комментарии для постов
  * */
-
 add_action( 'single_loop_after', 'comments_template', 10, 0 );
 
 
 /**
  * Добавляет пагинацию
  * */
-
 add_action( 'archive_loop_after', 'the_posts_pagination', 10, 0 );
 
 add_action( 'search_loop_after', 'the_posts_pagination', 10, 0 );
@@ -45,6 +40,8 @@ function add_pageheader_search() {
 }
 
 add_action( 'search_loop_before', 'ropejump\add_pageheader_search', 10, 0 );
+
+add_action( 'search_loop_before', 'get_search_form', 20, 0 );
 
 
 /**
@@ -132,3 +129,13 @@ function add_additional_scripts_body_end() {
 }
 
 add_action( 'body_end', 'ropejump\add_additional_scripts_body_end', 10, 0 );
+
+
+/**
+ * Устанавливает префикс для архивов
+ * */
+function get_custom_archive_title_prefix( $prefix ){
+	return get_theme_mod( 'archivetitleprefix' );
+}
+
+add_filter( 'get_the_archive_title_prefix', 'ropejump\get_custom_archive_title_prefix' );

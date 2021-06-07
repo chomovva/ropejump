@@ -102,8 +102,12 @@ img.alignright, a.alignright img { margin: 5px 0px 10px 10px; }
 .border-right { border-right: .1rem solid $border-color; }
 .border-top { border-top: .1rem solid $border-color; }
 
-@each $color in $brand-colors {
-	.border-#{$color} {
+@each $name, $color in $brand-colors {
+	.border-#{$name} {
 		border-color: $color;
+	}
+	.bg-#{$name} {
+		background-color: $color;
+		color: #fff;
 	}
 }

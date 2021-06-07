@@ -13,7 +13,7 @@ function customizer_register_home_about( $wp_customize ) {
 		ROPEJUMP_SLUG . '_home_about',
 		[
 			'title'            => sprintf( '%s - %s', __( 'Главная страница', ROPEJUMP_TEXTDOMAIN ),  __( 'О нас', ROPEJUMP_TEXTDOMAIN ) ),
-			'priority'         => 70,
+			'priority'         => 30,
 			'panel'            => 'template_parts',
 		]
 	); /**/

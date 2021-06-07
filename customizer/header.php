@@ -13,7 +13,7 @@ function customizer_register_header( $wp_customize ) {
 		ROPEJUMP_SLUG . '_header',
 		[
 			'title'            => __( 'Шапка сайта', ROPEJUMP_TEXTDOMAIN ),
-			'priority'         => 70,
+			'priority'         => 10,
 			'panel'            => 'template_parts',
 		]
 	); /**/

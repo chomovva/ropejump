@@ -13,7 +13,7 @@ function customizer_register_home_advantages( $wp_customize ) {
 		ROPEJUMP_SLUG . '_home_advantages',
 		[
 			'title'            => sprintf( '%s - %s', __( 'Главная страница', ROPEJUMP_TEXTDOMAIN ),  __( 'Преимущетва', ROPEJUMP_TEXTDOMAIN ) ),
-			'priority'         => 70,
+			'priority'         => 40,
 			'panel'            => 'template_parts',
 		]
 	); /**/

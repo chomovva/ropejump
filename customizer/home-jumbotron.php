@@ -13,7 +13,7 @@ function customizer_register_home_jumbotron( $wp_customize ) {
 		ROPEJUMP_SLUG . '_jumbotron',
 		[
 			'title'            => sprintf( '%s - %s', __( 'Главная страница', ROPEJUMP_TEXTDOMAIN ),  __( 'Первый экран', ROPEJUMP_TEXTDOMAIN ) ),
-			'priority'         => 70,
+			'priority'         => 20,
 			'panel'            => 'template_parts',
 		]
 	); /**/

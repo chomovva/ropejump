@@ -17,9 +17,9 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 				<figure class="author">
 					<img
 						<?php echo is_customize_preview() ? 'src="' . $blockquote[ 'foto' ] . '"' : 'src="#" data-src="' . $blockquote[ 'foto' ] . '"'; ?>
-						alt="<?php echo ( array_key_exists( 'author', $blockquote ) ) ? esc_attr( $blockquote[ 'author' ] ) : ''; ?>"/>
-					<?php if ( array_key_exists( 'author', $blockquote ) && ! empty( $blockquote[ 'author' ] ) ) : ?>
-						<figcaption class="hide"><?php echo $blockquote[ 'author' ]; ?></figcaption>
+						alt="<?php echo ( array_key_exists( 'name', $blockquote ) ) ? esc_attr( $blockquote[ 'name' ] ) : ''; ?>"/>
+					<?php if ( array_key_exists( 'name', $blockquote ) && ! empty( $blockquote[ 'name' ] ) ) : ?>
+						<figcaption class="hide"><?php echo $blockquote[ 'name' ]; ?></figcaption>
 					<?php endif; ?>
 				</figure>
 			</div>
@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 		<div class="col-xs-9 col-sm-9">
 			<blockquote>
 				<p><?php echo $blockquote[ 'blockquote' ]; ?></p>
-				<?php if ( array_key_exists( 'name', $blockquote ) && ! empty( $blockquote[ 'name' ] ) ) : ?>
+				<?php if ( ( array_key_exists( 'name', $blockquote ) && ! empty( $blockquote[ 'name' ] ) ) || ( array_key_exists( 'title', $blockquote ) && ! empty( $blockquote[ 'name' ] = $blockquote[ 'title' ] ) ) ) : ?>
 					<cite><?php echo $blockquote[ 'name' ]; ?></cite>
 				<?php endif; ?>
 			</blockquote>

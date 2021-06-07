@@ -13,7 +13,7 @@ function customizer_register_home_feedback( $wp_customize ) {
 		ROPEJUMP_SLUG . '_home_feedback',
 		[
 			'title'            => sprintf( '%s - %s', __( 'Главная страница', ROPEJUMP_TEXTDOMAIN ),  __( 'Обратная связь', ROPEJUMP_TEXTDOMAIN ) ),
-			'priority'         => 70,
+			'priority'         => 90,
 			'panel'            => 'template_parts',
 		]
 	); /**/

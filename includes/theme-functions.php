@@ -168,3 +168,23 @@ function is_nav_has_sub_menu( $item_id, $items ) {
 	}
 	return false;
 }
+
+
+/**
+ * Обходит массив и обрабатывает элементы массива функцией для перевода строк по ключу
+ * */
+function translate_list_strings( $list, $keys = [] ) {
+	if ( is_string( $list ) ) {
+		$list = json_decode( $list, true );
+	}
+	if ( is_array( $list ) && ! empty( $list ) ) {
+		foreach ( $list as &$item ) {
+			foreach ( $keys as $key => $func ) {
+				if ( array_key_exists( $key, $item ) && is_string( $item[ $key ] ) && ! empty( trim( $item[ $key ] ) ) ) {
+					$item[ $key ] = $func( $item[ $key ] );
+				}
+			}
+		}
+	}
+	return $list;
+}

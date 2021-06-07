@@ -13,7 +13,7 @@ function customizer_register_footer( $wp_customize ) {
 		ROPEJUMP_SLUG . '_footer',
 		[
 			'title'            => __( 'Подвал сайта', ROPEJUMP_TEXTDOMAIN ),
-			'priority'         => 70,
+			'priority'         => 100,
 			'panel'            => 'template_parts',
 		]
 	); /**/

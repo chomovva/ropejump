@@ -21,6 +21,7 @@
 	}
 
 	.entry .side--prev {
+		@extend %bgi-cover;
 		background-color: $brand-success;
 	}
 

@@ -64,6 +64,29 @@ function setup_default_mods( $old_name ) {
 	 	'homeorderformshortcode'     => '',
 	 	'homeorderbgisrc'            => '',
 
+	 	// галерея
+	 	'homegallerytitle'           => 'Галерея',
+	 	'homegallerydescription'     => '',
+	 	'homegallerylabel'           => 'наш Instagram',
+	 	'homegallerypermalink'       => '',
+	 	'homegallery'                => [],
+	 	'homegalleryrowheight'       => 175,
+	 	'homegallerymargins'         => 14,
+	 	'homegallerylastrow'         => 'center',
+	 	'homegalleryborder'          => 0,
+
+	 	// "шаги"
+	 	'homestepstitle'           => '',
+	 	'homestepsdescription'     => '',
+	 	'homesteps'                => [],
+
+	 	// отзывы
+	 	'homereviewstitle'           => 'Отзывы',
+	 	'homereviewsdescription'     => '',
+	 	'homereviewslabel'           => 'Все отзывы',
+	 	'homereviewspermalink'       => '',
+	 	'homereviews'                => [],
+
 	 	// главная страница - Обратная связь
 	 	'homefeedbackusedby'         => false,
 	 	'homefeedbacktitle'          => 'Напишите нам!',
@@ -75,6 +98,9 @@ function setup_default_mods( $old_name ) {
 	 	'footersocialcopyright'      => '2021 &copy; Альпсити',
 	 	'footersocialfacebook'       => 'https://www.facebook.com/ropejumpmariupol',
 	 	'footersocialinstagram'      => 'https://www.instagram.com/ropejumpmrlp/',
+
+	 	// настройки шаблона Архива
+	 	'archivetitleprefix'         => '',
 
 	], $mods ) );
 }
