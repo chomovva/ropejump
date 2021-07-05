@@ -22,10 +22,14 @@ function sanitize_checkbox( $checked = false ) {
  * @return boolean      результат проверки
  */
 function is_url( $url = '' ) {
-	$path = parse_url( $url, PHP_URL_PATH );
-	$encoded_path = array_map( 'urlencode', explode( '/', $path ) );
-	$url = str_replace( $path, implode( '/', $encoded_path ), $url );
-	return filter_var( $url, FILTER_VALIDATE_URL) ? true : false;
+	$result = false;
+	if ( is_string( $url ) ) {
+		$path = parse_url( $url, PHP_URL_PATH );
+		$encoded_path = array_map( 'urlencode', explode( '/', $path ) );
+		$url = str_replace( $path, implode( '/', $encoded_path ), $url );
+		$result = filter_var( $url, FILTER_VALIDATE_URL) ? true : false;
+	}
+	return $result;
 }
 
 
