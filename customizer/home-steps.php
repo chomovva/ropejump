@@ -89,7 +89,7 @@ function customizer_register_home_steps( $wp_customize ) {
 					return parse_only_allowed_args(
 						[ 'usedby' => '', 'title' => '', 'logo' => [], 'excerpt' => '' ],
 						$value,
-						[ 'ropejump\sanitize_checkbox', 'sanitize_text_field', 'ropejump\sanitize_attachment_data', 'sanitize_textarea_field' ]
+						[ 'ropejump\sanitize_checkbox', 'sanitize_text_field', 'ropejump\sanitize_attachment_data', 'wp_kses_post' ]
 					);
 				}, json_decode( $data, true ) ) );
 				return ( is_array( $result ) ) ? wp_json_encode( $result, JSON_UNESCAPED_UNICODE ) : '[]';
@@ -101,17 +101,17 @@ function customizer_register_home_steps( $wp_customize ) {
 			$wp_customize,
 			'homesteps',
 			[
-				'label'      => __( 'Список отзывов', ROPEJUMP_TEXTDOMAIN ),
+				'label'      => __( 'Список', ROPEJUMP_TEXTDOMAIN ),
 				'section'    => ROPEJUMP_SLUG . '_home_steps',
 				'type'       => 'list',
 				'controls'   => [
 					'logo'      => [
 						'type'     => 'image',
-						'label'    => __( 'Фото с соотношением сторон 1:1', ROPEJUMP_TEXTDOMAIN ),
+						'label'    => __( 'Изображение с соотношением сторон 1:1', ROPEJUMP_TEXTDOMAIN ),
 					],
 					'excerpt'   => [
-						'type'     => 'textarea',
-						'label'    => __( 'Отзыв', ROPEJUMP_TEXTDOMAIN ),
+						'type'     => 'editor',
+						'label'    => __( 'Краткое описание', ROPEJUMP_TEXTDOMAIN ),
 					],
 				],
 			]

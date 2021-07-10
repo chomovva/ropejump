@@ -8,7 +8,7 @@ mixin steps_entry( args )
 		.counter: .value
 		.logo( data-src=args.logo )
 		h3.title #{args.title}
-		p.excerpt #{args.excerpt}
+		.excerpt #{args.excerpt}
 
 
 section.section.section--steps#steps
@@ -17,6 +17,6 @@ section.section.section--steps#steps
 		p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 		.wrap: .row.center-xs
 			+steps_entry( { logo: src.userfiles+'step01.png', title: 'Lorem ipsum dolor sit', excerpt: ' Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' } )
-			+steps_entry( { logo: src.userfiles+'step01.png', title: 'Lorem ipsum dolor sit', excerpt: ' Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' } )
-			+steps_entry( { logo: src.userfiles+'step01.png', title: 'Lorem ipsum dolor sit', excerpt: ' Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' } )
-			+steps_entry( { logo: src.userfiles+'step01.png', title: 'Lorem ipsum dolor sit', excerpt: ' Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' } )
+			+steps_entry( { logo: src.userfiles+'step02.png', title: 'Lorem ipsum dolor sit', excerpt: ' Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' } )
+			+steps_entry( { logo: src.userfiles+'step03.png', title: 'Lorem ipsum dolor sit', excerpt: ' Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' } )
+			+steps_entry( { logo: src.userfiles+'step04.png', title: 'Lorem ipsum dolor sit', excerpt: ' Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' } )

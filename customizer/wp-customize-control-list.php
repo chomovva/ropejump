@@ -85,7 +85,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 				<script type="text/html" id="tmpl-<?php echo $this->id; ?>-item">
 					<li class="list__item item {{data.usedby}}" data-item-index="{{data.i}}">
 						<span class="title">{{data.title}}</span>
-						<button type="button" class="toggle dashicons-before" title="<?php _e( 'Открыть форму редатирования блока', $this->textdomain ); ?>">
+						<button type="button" class="toggle dashicons-before" title="<?php _e( 'Открыть форму редактирования блока', $this->textdomain ); ?>">
 							<snap class="sr-only"><?php _e( 'Редактировать блок', $this->textdomain ); ?></snap>
 						</button>
 					</li>

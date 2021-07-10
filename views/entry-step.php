@@ -34,7 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; };
 		<?php endif; ?>
 
 		<?php if ( array_key_exists( 'excerpt', $entry ) && ! empty( trim( $entry[ 'excerpt' ] ) ) ) : ?>
-			<p class="excerpt"><?php echo $entry[ 'excerpt' ]; ?></p>
+			<div class="excerpt"><?php echo $entry[ 'excerpt' ]; ?></div>
 		<?php endif; ?>
 
 	</div>

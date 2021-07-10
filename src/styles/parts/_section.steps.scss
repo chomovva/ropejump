@@ -105,6 +105,11 @@
 		margin-top: 0;
 	}
 
+	.entry .excerpt p {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
 	.entry .logo {
 		@extend %background-icon;
 		width: 10rem;
@@ -114,7 +119,7 @@
 		overflow: hidden;
 		margin: 1rem auto;
 		background-size: 50%;
-		box-shadow: 0 0 2rem rgba( 0, 0, 0, .15 ) inset;
+		box-shadow: 0 0 2.5rem rgba( 0, 0, 0, .05 ) inset;
 	}
 
 	.entry .title {

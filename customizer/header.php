@@ -43,14 +43,14 @@ function customizer_register_header( $wp_customize ) {
 		'headerpanelcallhref',
 		[
 			'transport'         => 'postMessage',
-			'sanitize_callback' => 'esc_url_raw',
+			'sanitize_callback' => 'sanitize_text_field',
 		]
 	);
 	$wp_customize->add_control(
 		'headerpanelcallhref',
 		[
 			'section'           => ROPEJUMP_SLUG . '_header',
-			'label'             => __( 'Атрибут href кнопки', ROPEJUMP_TEXTDOMAIN ),
+			'label'             => __( 'Номер телефона', ROPEJUMP_TEXTDOMAIN ),
 			'type'              => 'url',
 		]
 	);

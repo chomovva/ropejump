@@ -121,7 +121,7 @@ function customizer_register_home_about( $wp_customize ) {
 		'homeaboutblockquoteusedby',
 		[
 			'section'           => ROPEJUMP_SLUG . '_home_about',
-			'label'             => __( 'Показівать цитату', ROPEJUMP_TEXTDOMAIN ),
+			'label'             => __( 'Показывать цитату', ROPEJUMP_TEXTDOMAIN ),
 			'type'              => 'checkbox',
 		]
 	);

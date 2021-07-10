@@ -1,0 +1,382 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2021-07-10 22:08+0300\n"
+"PO-Revision-Date: 2021-07-10 22:08+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr__;esc_attr_e\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: node_modules\n"
+"X-Poedit-SearchPathExcluded-1: scripts\n"
+"X-Poedit-SearchPathExcluded-2: src\n"
+
+#: customizer/additional-scripts.php:15
+msgid "Дополнительные скрипты"
+msgstr "Додаткові скрипти"
+
+#: customizer/additional-scripts.php:30
+msgid "Скрипты сразу после тега HEAD"
+msgstr "Скрипти відразу після тега HEAD"
+
+#: customizer/additional-scripts.php:45
+msgid "Скрипты сразу перед закрывающим тегом HEAD"
+msgstr "Скрипти відразу перед закриває тегом HEAD"
+
+#: customizer/additional-scripts.php:60
+msgid "Скрипты сразу после тега BODY"
+msgstr "Скрипти відразу після тега BODY"
+
+#: customizer/additional-scripts.php:75
+msgid "Скрипты сразу перед закрывающим тегом BODY"
+msgstr "Скрипти відразу перед закриває тегом BODY"
+
+#: customizer/footer.php:15
+msgid "Подвал сайта"
+msgstr "Підвал сайту"
+
+#: customizer/footer.php:32
+msgid "Копирайт"
+msgstr "Копірайт"
+
+#: customizer/header.php:15
+msgid "Шапка сайта"
+msgstr "Шапка сайту"
+
+#: customizer/header.php:32 customizer/home-jumbotron.php:74
+msgid "Текст кнопки"
+msgstr "Текст кнопки"
+
+#: customizer/header.php:53
+msgid "Номер телефона"
+msgstr "Номер телефона"
+
+#: customizer/header.php:83 customizer/home-advantages.php:114
+#: customizer/home-feedback.php:116 customizer/home-order.php:116
+msgid "Фоновое изображение"
+msgstr "Фонове зображення"
+
+#: customizer/home-about.php:15 customizer/home-advantages.php:15
+#: customizer/home-feedback.php:15 customizer/home-gallery.php:15
+#: customizer/home-jumbotron.php:15 customizer/home-order.php:15
+#: customizer/home-reviews.php:15 customizer/home-steps.php:15
+msgid "Главная страница"
+msgstr "Головна сторінка"
+
+#: customizer/home-about.php:15
+msgid "О нас"
+msgstr "Про нас"
+
+#: customizer/home-about.php:32 customizer/home-advantages.php:32
+#: customizer/home-feedback.php:32 customizer/home-gallery.php:32
+#: customizer/home-order.php:32 customizer/home-reviews.php:32
+#: customizer/home-steps.php:32
+msgid "Использовать секцию"
+msgstr "Використовувати секцію"
+
+#: customizer/home-about.php:52 customizer/home-advantages.php:52
+#: customizer/home-feedback.php:52 customizer/home-gallery.php:52
+#: customizer/home-order.php:52 customizer/home-reviews.php:52
+#: customizer/home-steps.php:52
+msgid "Заголовок &lt;H2&gt;"
+msgstr "Заголовок &lt;H2&gt;"
+
+#: customizer/home-about.php:74
+msgid "Описание"
+msgstr "Опис"
+
+#: customizer/home-about.php:98
+msgid "Превью"
+msgstr "Превью"
+
+#: customizer/home-about.php:124
+msgid "Показывать цитату"
+msgstr "Показівать цитату"
+
+#: customizer/home-about.php:149
+msgid "Фото автора цитаты"
+msgstr "Фото автора цитати"
+
+#: customizer/home-about.php:179
+msgid "Имя автора цитаты"
+msgstr "Ім'я автора цитати"
+
+#: customizer/home-about.php:203
+msgid "Цитата"
+msgstr "Цитата"
+
+#: customizer/home-advantages.php:15
+msgid "Преимущетва"
+msgstr "Переваги"
+
+#: customizer/home-advantages.php:73 customizer/home-gallery.php:73
+#: customizer/home-jumbotron.php:53 customizer/home-reviews.php:73
+#: customizer/home-steps.php:73
+msgid "Подзаголовок &lt;P&gt;"
+msgstr "Підзаголовок & lt; P & gt;"
+
+#: customizer/home-advantages.php:104 customizer/home-steps.php:104
+msgid "Список"
+msgstr "Перелік"
+
+#: customizer/home-advantages.php:110
+msgid "Логотип"
+msgstr "Логотип"
+
+#: customizer/home-advantages.php:118 customizer/home-steps.php:114
+msgid "Краткое описание"
+msgstr "Короткий опис"
+
+#: customizer/home-feedback.php:15
+msgid "Обратная связь"
+msgstr "Зворотній зв'язок"
+
+#: customizer/home-feedback.php:73 customizer/home-order.php:73
+msgid "Описание &lt;P&gt;"
+msgstr "Опис &lt;P&gt;"
+
+#: customizer/home-feedback.php:94 customizer/home-order.php:94
+msgid "Шорткод формы обратной связи"
+msgstr "Шорткод форми зворотного зв'язку"
+
+#: customizer/home-gallery.php:15
+msgid "Галерея"
+msgstr "Галерея"
+
+#: customizer/home-gallery.php:95
+msgid "Фото"
+msgstr "Фото"
+
+#: customizer/home-gallery.php:117 customizer/home-reviews.php:94
+msgid "Текст кнопки со ссылкой на все отзывы"
+msgstr "Текст кнопки з посиланням на всі відгуки"
+
+#: customizer/home-gallery.php:138
+msgid "Ссылка на все фото"
+msgstr "Посилання на всі фото"
+
+#: customizer/home-gallery.php:162
+msgid "Высота строки"
+msgstr "Висота рядка"
+
+#: customizer/home-gallery.php:187 customizer/home-gallery.php:212
+msgid "Расстояние между фото"
+msgstr "Відстань між фото"
+
+#: customizer/home-gallery.php:215
+msgid "по ширине"
+msgstr "по ширині"
+
+#: customizer/home-gallery.php:216
+msgid "не по ширине"
+msgstr "не по ширині"
+
+#: customizer/home-gallery.php:217
+msgid "слева"
+msgstr "зліва"
+
+#: customizer/home-gallery.php:218
+msgid "по центру"
+msgstr "по центру"
+
+#: customizer/home-gallery.php:219
+msgid "справа"
+msgstr "справа"
+
+#: customizer/home-gallery.php:220
+msgid "скрыть"
+msgstr "приховати"
+
+#: customizer/home-gallery.php:241
+msgid "Отступ вокруг контейнера"
+msgstr "Відступ навколо контейнера"
+
+#: customizer/home-jumbotron.php:15
+msgid "Первый экран"
+msgstr "Перший екран"
+
+#: customizer/home-jumbotron.php:32
+msgid "Заголовок &lt;H1&gt;"
+msgstr "Заголовок &lt;H1&gt;"
+
+#: customizer/home-jumbotron.php:95
+msgid "Атрибут href кнопки"
+msgstr "Атрибут href кнопки"
+
+#: customizer/home-jumbotron.php:119
+msgid "Показывать счётчик"
+msgstr "Показувати лічильник"
+
+#: customizer/home-jumbotron.php:140
+msgid "Описание счётчика"
+msgstr "Опис лічильника"
+
+#: customizer/home-jumbotron.php:162
+msgid "Дата и время проведения мероприятия"
+msgstr "Дата і час проведення заходу"
+
+#: customizer/home-order.php:15
+msgid "Форма \"Заказать\""
+msgstr "Форма \"Замовити\""
+
+#: customizer/home-reviews.php:15
+msgid "Отзывы"
+msgstr "Відгуки"
+
+#: customizer/home-reviews.php:115
+msgid "Ссылка на страницу отзывов"
+msgstr "Посилання на сторінку відгуків"
+
+#: customizer/home-reviews.php:149
+msgid "Список отзывов"
+msgstr "Список відгуків"
+
+#: customizer/home-reviews.php:155
+msgid "Фото с соотношением сторон 1:1"
+msgstr "Фото із співвідношенням сторін 1:1"
+
+#: customizer/home-reviews.php:159
+msgid "Отзыв"
+msgstr "Відгук"
+
+#: customizer/home-steps.php:15
+msgid "Список \"Шаги\""
+msgstr "Список \"Кроки\""
+
+#: customizer/home-steps.php:110
+msgid "Изображение с соотношением сторон 1:1"
+msgstr "Зображення зі співвідношенням сторін 1:1"
+
+#: customizer/register-panels.php:19
+msgid "Блоки темы"
+msgstr "Блоки теми"
+
+#: customizer/register-panels.php:30
+msgid "Шаблоны страниц"
+msgstr "Шаблони сторінок"
+
+#: customizer/template-archive.php:15
+msgid "Архива"
+msgstr "Архіву"
+
+#: customizer/template-archive.php:16
+msgid "Настройки шаблона архивов, категорий, блога."
+msgstr "Налаштування шаблону архівів, категорій, блогу."
+
+#: customizer/template-archive.php:33
+msgid "Текст перед заголовком архива"
+msgstr "Текст перед заголовком архіву"
+
+#: customizer/wp-customize-control-list.php:36
+msgid "Использовать"
+msgstr "Використовувати"
+
+#: customizer/wp-customize-control-list.php:40
+msgid "Заголовок"
+msgstr "Заголовок"
+
+#: customizer/wp-customize-control-list.php:88
+msgid "Открыть форму редактирования блока"
+msgstr "Відкрити форму редагування блоку"
+
+#: customizer/wp-customize-control-list.php:89
+msgid "Редактировать блок"
+msgstr "Редагувати блок"
+
+#: customizer/wp-customize-control-list.php:96
+msgid "Закрыть форму"
+msgstr "Закрити форму"
+
+#: customizer/wp-customize-control-list.php:97 parts/nav.php:17
+msgid "Закрыть"
+msgstr "Закрити"
+
+#: customizer/wp-customize-control-list.php:231
+msgid "выбор изображения"
+msgstr "вибір зображення"
+
+#: customizer/wp-customize-control-list.php:232
+#: customizer/wp-customize-control-list.php:233
+#: customizer/wp-customize-control-list.php:275
+msgid "Выберите изображение"
+msgstr "Виберіть зображення"
+
+#: customizer/wp-customize-control-list.php:235
+msgid "Очистить"
+msgstr "Очистити"
+
+#: customizer/wp-customize-control-list.php:236
+msgid "Очистить изображение"
+msgstr "Очистити зображення"
+
+#: customizer/wp-customize-control-list.php:276
+msgid "Выберите изображения галереи"
+msgstr "Виберіть зображення галереї"
+
+#: customizer/wp-customize-control-list.php:333
+msgid "Удалить блок"
+msgstr "Видалити блок"
+
+#: customizer/wp-customize-control-list.php:334
+msgid "Удалить"
+msgstr "Видалити"
+
+#: footer.php:40
+msgid "Разработка: <a href=\"https://chomovva.ru/\">chomovva</a>"
+msgstr "Розробка: <a href=\"https://chomovva.ru/\">chomovva</a>"
+
+#: includes/menus.php:15
+msgid "Главное меню"
+msgstr "Головне меню"
+
+#: includes/sidebars.php:15
+msgid "Колонка в боково панели"
+msgstr "Колонка в бічній панелі"
+
+#: includes/sidebars.php:17
+msgid "Отображается в боковой панели. Расположено после навигационного меню."
+msgstr "Відображається в бічній панелі. Розташоване після навігаційного меню."
+
+#: includes/theme-supports.php:28
+msgid "Facebook"
+msgstr "Facebook"
+
+#: includes/theme-supports.php:29
+msgid "instaram"
+msgstr "instaram"
+
+#: parts/breadcrumbs.php:18
+msgid "Главная"
+msgstr "Головна"
+
+#: parts/breadcrumbs.php:31
+msgid "Домашняя страница"
+msgstr "Домашня сторінка"
+
+#: parts/pageheader-search.php:10
+msgid "Поиск по сайту"
+msgstr "Пошук по сайту"
+
+#: parts/pageheader-search.php:13
+msgid "Вы искали"
+msgstr "Ви шукали"
+
+#: parts/panel.php:30
+msgid "Меню"
+msgstr "Меню"
+
+#: searchform.php:15
+msgid "Найти"
+msgstr "Знайти"
+
+#: views/entry-archive.php:24 views/entry-search.php:24
+msgid "Подробнее"
+msgstr "Докладніше"
